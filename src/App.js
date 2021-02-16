@@ -9,7 +9,7 @@ import Permission from './components/details/permission';
 
 
  
-
+var url =  "http://java-library-api.herokuapp.com/";
 export class App extends Component  {
   state = {
     book: []
@@ -22,7 +22,7 @@ export class App extends Component  {
   }
 
   fetchProducts = () =>{
-    fetch('api/library/books/10/10')
+    fetch(url + 'api/library/books/10/10')
     .then(res => res.json())
     .then(book => {
       this.setState({book})
@@ -45,7 +45,7 @@ export class App extends Component  {
   }
 
   getTopBooks = () =>{
-    fetch('api/library/books/popular/10')
+    fetch(url + 'api/library/books/popular/10')
     .then(res => res.json())
     .then(book => {
       this.setState({book})
@@ -53,7 +53,7 @@ export class App extends Component  {
   }
 
   dicoverBooks = () => {
-    fetch('api/library/books/discover')
+    fetch(url + 'api/library/books/discover')
     .then(res => res.json())
     .then(book => {
       this.setState({book})

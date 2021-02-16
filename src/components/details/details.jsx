@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { NavLink} from 'react-router-dom';
 
+
+
+var url = "https://java-library-api.herokuapp.com/";
 export class Details extends Component {
     state = {
         bookId: 0,
@@ -27,7 +30,7 @@ export class Details extends Component {
     }
 
     fetchOpinion = id =>{
-        fetch(`api/library/books/id/${id}`)
+        fetch(url + `api/library/books/id/${id}`)
         .then(res => res.json())
         .then(details => {
           this.setState({bookDetails: details, bookId: id, isFetching: false})
